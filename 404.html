@@ -5,20 +5,29 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Redirecting…</title>
     <script>
-      // If GitHub Pages serves this 404 page for a non-root SPA URL,
-      // fetch index.html and replace the document so the SPA can handle the route.
+      // Attempt to load the app's index.html using an absolute path so the SPA can handle the route.
       (function () {
-        var indexPath = '/techthor-polyglot-portal/index.html'; // replace REPO_NAME or use '/' for user site
+        // Replace with your repo path if different. Use '/' for user site.
+        var repoRoot = '/techthor-polyglot-portal/';
+        var indexPath = window.location.origin + repoRoot + 'index.html';
+
         fetch(indexPath, { credentials: 'same-origin' })
-          .then(function (res) { return res.text(); })
+          .then(function (res) {
+            if (!res.ok) throw new Error('index fetch failed: ' + res.status);
+            return res.text();
+          })
           .then(function (html) {
+            // Replace document content with index.html so Angular can bootstrap using the current URL.
             document.open();
             document.write(html);
             document.close();
           })
-          .catch(function () {
-            // fallback to repo root (loses original path)
-            window.location.replace('/techthor-polyglot-portal/');
+          .catch(function (err) {
+            // On error, show a minimal message and log the error to help debugging.
+            console.error('Failed to fetch index.html from', indexPath, err);
+            document.body.innerHTML =
+              '<h1>Application unavailable</h1>' +
+              '<p>Could not load the app shell. Check console/network and the 404.html configuration.</p>';
           });
       })();
     </script>

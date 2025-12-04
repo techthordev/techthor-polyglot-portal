@@ -7,23 +7,23 @@
     <script>
       // Attempt to load the app's index.html using an absolute path so the SPA can handle the route.
       (function () {
-        // Replace with your repo path if different. Use '/' for user site.
+        // Repo root path for your GitHub Pages site:
         var repoRoot = '/techthor-polyglot-portal/';
         var indexPath = window.location.origin + repoRoot + 'index.html';
 
+        // Try to fetch index.html and write it to the document so Angular bootstraps
+        // with the original location (so the router can handle the path).
         fetch(indexPath, { credentials: 'same-origin' })
           .then(function (res) {
             if (!res.ok) throw new Error('index fetch failed: ' + res.status);
             return res.text();
           })
           .then(function (html) {
-            // Replace document content with index.html so Angular can bootstrap using the current URL.
             document.open();
             document.write(html);
             document.close();
           })
           .catch(function (err) {
-            // On error, show a minimal message and log the error to help debugging.
             console.error('Failed to fetch index.html from', indexPath, err);
             document.body.innerHTML =
               '<h1>Application unavailable</h1>' +

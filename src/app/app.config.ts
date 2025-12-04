@@ -6,7 +6,7 @@ import { routes } from './app.routes';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideRouter(routes),                              // Provide the router with your routes
-    provideClientHydration()                            // Client hydration if you need it
+    provideRouter(routes),           // Provide router with routes (history API by default)
+    provideClientHydration()
   ]
 };

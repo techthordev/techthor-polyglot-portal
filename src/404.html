@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Redirecting…</title>
+    <script>
+      // If GitHub Pages serves this 404 page for a non-root SPA URL,
+      // fetch index.html and replace the document so the SPA can handle the route.
+      (function () {
+        var indexPath = '/techthor-polyglot-portal/index.html'; // replace REPO_NAME or use '/' for user site
+        fetch(indexPath, { credentials: 'same-origin' })
+          .then(function (res) { return res.text(); })
+          .then(function (html) {
+            document.open();
+            document.write(html);
+            document.close();
+          })
+          .catch(function () {
+            // fallback to repo root (loses original path)
+            window.location.replace('/techthor-polyglot-portal/');
+          });
+      })();
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,16 +1,10 @@
 <div class="flex flex-col min-h-screen">
+  <app-banner size="large"></app-banner>
+  <app-navbar />
 
-    <!-- 1. Banner (Uses the dynamic height set in BannerComponent, e.g., h-[15vh]) -->
-    <app-banner size="large"></app-banner>
+  <div class="grow w-full">
+    <router-outlet></router-outlet>
+  </div>
 
-    <!-- 
-      2. Main Content Area (MUST have flex-grow to occupy all remaining space)
-      - flex-grow: Tells this element to take up all available vertical space between the banner and the footer.
-      - w-full: Ensures it spans the full width.
-    -->
-    <app-content class="grow"/>
-
-    <!-- 3. Footer (Stays at the bottom, pushed there by the main element's flex-grow) -->
-    <app-footer />
-    
+  <app-footer />
 </div>

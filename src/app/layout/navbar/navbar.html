@@ -22,7 +22,7 @@
       <div class="hidden sm:ml-6 sm:flex sm:space-x-6">
         @for (link of navLinks; track link.path) {
           <a
-            [href]="link.path"
+            [routerLink]="link.path"
             [target]="link.isExternal ? '_blank' : '_self'"
             class="text-gray-600 hover:bg-blue-50 hover:text-blue-700 px-3 py-2 rounded-lg text-lg font-medium transition duration-150"
             aria-current="page"
@@ -64,7 +64,7 @@
       <div class="px-2 pt-2 pb-3 space-y-1">
         @for (link of navLinks; track link.path) {
           <a
-            [href]="link.path"
+            [routerLink]="link.path"
             (click)="toggleMenu()"
             [target]="link.isExternal ? '_blank' : '_self'"
             class="text-gray-700 hover:bg-blue-100 hover:text-blue-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150"

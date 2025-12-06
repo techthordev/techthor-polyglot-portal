@@ -82,10 +82,10 @@ export const TECH_STACK_DATA: TechStackItem[] = [
       iconPath: 'assets/icons/fedora-logo.png'
     },
     { 
-      name: 'Zed', 
+      name: 'IntelliJ & Zed', 
       category: 'Development Tools', 
       description: 'Preferred IDEs for Java/Backend (IntelliJ) and fast, modern Frontend/Rust development (Zed).', 
-      iconPath: 'assets/icons/zed-logo.png'
+      iconPath: 'assets/icons/ide-logo.png'
     },
     { 
       name: 'Git', 

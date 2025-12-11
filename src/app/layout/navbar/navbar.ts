@@ -10,10 +10,11 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 export class Navbar implements OnInit {
   navLinks = [
     { title: 'Home', path: '/', isExternal: false },
-    { title: 'Polyglot Stack', path: '/stack', isExternal: false }, // Focus on the breadth of technologies
-    { title: 'Mastery Tracks', path: '/tracks', isExternal: false }, // Focus on the curated course knowledge
+    { title: 'Polyglot Stack', path: '/stack', isExternal: false },
+    { title: 'Mastery Tracks', path: '/tracks', isExternal: false },
     { title: 'Projects', path: '/projects', isExternal: false },
     { title: 'About', path: '/about', isExternal: false },
+    { title: 'Docs', path: 'https://docs.techthordev.com.br', isExternal: true }
   ];
 
   isMenuOpen = false;

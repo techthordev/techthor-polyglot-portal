@@ -19,4 +19,5 @@ export interface ProjectItem {
   iconPath: string;
   repoUrl?: string;
   category: 'Portal Showcase' | 'Proof of Work';
+  repoLabel?: string;
 }

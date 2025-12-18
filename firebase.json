@@ -1,0 +1,20 @@
+{
+  "hosting": [
+    {
+      "target": "techthordev-app",
+      "public": "dist/techthor-polyglot-portal/browser",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    },
+    {
+      "target": "docs-app",
+      "public": "documentation",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
+    }
+  ]
+}

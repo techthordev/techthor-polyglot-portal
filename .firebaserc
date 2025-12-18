@@ -1,0 +1,18 @@
+{
+  "projects": {
+    "default": "techthordev"
+  },
+  "targets": {
+    "techthordev": {
+      "hosting": {
+        "docs-app": [
+          "docs-techthordev-app"
+        ],
+        "techthordev-app": [
+          "techthordev-app"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}

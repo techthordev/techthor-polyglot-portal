@@ -25,7 +25,7 @@ jobs:
         run: npm run docs:build
 
       - name: Upload Compodoc build as artifact
-        uses: FirebaseExtended/action-hosting-deploy@v0
+        uses: actions/upload-artifact@v4
         with:
           name: compodoc-portal-api
-          path: dist
+          path: dist   # kompletter Build-Ordner, nicht index.html
